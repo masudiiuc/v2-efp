@@ -15,4 +15,9 @@ class Index extends MX_Controller
     {
         $this->layout->view('home');
     }
+
+    public function signup()
+    {
+        $this->layout->view('signup');
+    }
 }
