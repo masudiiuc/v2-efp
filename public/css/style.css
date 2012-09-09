@@ -14,6 +14,13 @@ body{
 legend{
     font-size:19px;
 }
+
+.login-form{
+    border: 1px solid #e1e1e1;
+    padding: 5px;
+    width: 500px;
+    margin: 100px auto;
+}
 .navbar-inverse .navbar-inner{
     background-image: none;
     background-color: #B2DC56;
