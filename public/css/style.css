@@ -32,6 +32,10 @@ legend{
     text-shadow: none;
 }
 
+#choose-category form{
+    margin-left: 10%;
+}
+
 .left-sidebar-top{
     margin-top: 25px;
 }

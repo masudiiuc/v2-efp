@@ -1,7 +1,7 @@
 <div class="signup-form">
     <h4>Signup as a new Vendor </h4>
     <hr/>
-    <form class="form-horizontal">
+        <form class="form-horizontal">
         <div class="control-group">
             <label class="control-label" for="inputEmail">Name of the Company</label>
             <div class="controls">
@@ -70,7 +70,5 @@
                 <button type="submit" class="btn btn-primary">Proceed to next Step <i class="icon-chevron-right"></i></button>
             </div>
         </div>
-
-
     </form>
 </div>

@@ -8,7 +8,7 @@
             </select>
 
             <label>Location</label>
-            <input type="text" class="input-medium" placeholder="city, state or Zip code">
+            <input type="text" class="input-medium span10" placeholder="city, state or Zip code">
 
 
             <label>Within</label>

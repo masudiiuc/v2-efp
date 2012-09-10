@@ -33,6 +33,9 @@ class Index extends MX_Controller
 
     public function choose_category()
     {
+        $this->load->model('OrganicListingType');
+
+        $this->data['organicListing'] = $this->OrganicListingType->getOrganicListingTypes();
         $this->layout->view('choose_category', $this->data);
     }
 

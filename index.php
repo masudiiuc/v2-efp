@@ -33,7 +33,12 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-            define('BASE_URL', 'http://v2.ecofriendlyparty.local/');
+            define('BASE_URL'   , 'http://v2.ecofriendlyparty.local/');
+            define('DB_HOST'    , 'localhost');
+            define('DB_USERNAME', 'root');
+            define('DB_PASSWORD', '');
+            define('DB_NAME'    , 'ecofrie1_ecodb');
+
 			error_reporting(E_ALL);
 		break;
 	
