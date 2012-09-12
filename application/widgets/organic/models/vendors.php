@@ -1,6 +1,6 @@
 <?php
 
-class Vendors extends CI_Model
+class vendors extends CI_Model
 {
      /**
      * @var    protected
@@ -28,8 +28,7 @@ class Vendors extends CI_Model
      **/
     public function getUserLogin( $email, $password ){
 
-        die('I am here');
-        $query = $this->db->get_where($this->_tableName, array('user_id' => $email,'password' => $password))->result_array();
+        $query = $this->db->get_where($this->_tableName, array('email' => $email,'password' => $password))->result_array();
 
         if($query) {
             return $query[0];

@@ -22,15 +22,14 @@ class Index extends MX_Controller
         if( $this->input->post() ){
             $email = $this->input->post('email', true);
             $password = $this->input->post('password', true);
-            //echo $email." ".$password;die();
             $isLogin =  $this->_checkLogin($email, md5($password));
 
             if( $isLogin ){
                 $this->message->set('Successfully Loggedin', 'success', true);
-                redirect('vendors/home');
+               redirect('organic/vendors/', 'refresh');
             }else{
                 $this->message->set('Sorry! Invalid Login Information. Please try again', 'failure');
-                redirec('organic/index/login');
+                redirect('organic/index/login');
             }
         }
 
@@ -76,11 +75,11 @@ class Index extends MX_Controller
      * @param   string $password
      */
     private function _checkLogin($email, $password){
-        $this->load->model('VendorsModel');
-        $result = $this->VendorsModel->getUserLogin( $email, $password );
+        $this->load->model('vendors');
+        $result = $this->vendors->getUserLogin( $email, $password );
 
         if( $result ) {
-            $_SESSION['vendorsInfo'] = $result;
+            $this->session->set_userdata('vendorsInfo',$result);
             return true;
         }
         return false;
