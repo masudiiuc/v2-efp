@@ -51,7 +51,15 @@
         </footer>
 
     </div><!--/.fluid-container-->
+
     <script type="text/javascript" src="<?php echo base_url() ?>public/bootstrap/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>public/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>public/js/jquery-latest.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>public/js/jquery.validate.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $("#LoginForm").validate();
+        });
+    </script>
 </body>
 </html>

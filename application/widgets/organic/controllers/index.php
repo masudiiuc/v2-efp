@@ -18,6 +18,22 @@ class Index extends MX_Controller
 
     public function login()
     {
+
+        if( $this->input->post() ){
+            $email = $this->input->post('email', true);
+            $password = $this->input->post('password', true);
+            //echo $email." ".$password;die();
+            $isLogin =  $this->_checkLogin($email, md5($password));
+
+            if( $isLogin ){
+                $this->message->set('Successfully Loggedin', 'success', true);
+                redirect('vendors/home');
+            }else{
+                $this->message->set('Sorry! Invalid Login Information. Please try again', 'failure');
+                redirec('organic/index/login');
+            }
+        }
+
         $this->layout->view('login', $this->data);
     }
 
@@ -47,5 +63,26 @@ class Index extends MX_Controller
     public function confirmation()
     {
         $this->layout->view('confirmation', $this->data);
+    }
+
+
+
+
+    /**
+     * check for user login
+     *
+     * @access  private
+     * @param   string $email
+     * @param   string $password
+     */
+    private function _checkLogin($email, $password){
+        $this->load->model('VendorsModel');
+        $result = $this->VendorsModel->getUserLogin( $email, $password );
+
+        if( $result ) {
+            $_SESSION['vendorsInfo'] = $result;
+            return true;
+        }
+        return false;
     }
 }
