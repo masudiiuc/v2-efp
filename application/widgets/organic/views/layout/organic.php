@@ -18,7 +18,13 @@
                 <a class="brand" href="#">Project name</a>
                 <div class="nav-collapse collapse">
                     <p class="navbar-text pull-right">
+                        <?php if( isset( $email )){ ?>
+
                         Logged in as <a href="#" class="navbar-link"><?php echo $email;?></a>
+                        <?php }else{ ?>
+
+                        <a href="<?php echo site_url('organic/vendor/login') ?>">Login</a>
+                        <?php } ?>
                     </p>
                     <ul class="nav">
                         <li class="active"><a href="#">Home</a></li>

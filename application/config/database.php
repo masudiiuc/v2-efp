@@ -47,10 +47,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '123456';
-$db['default']['database'] = 'ecofrie1_ecodb';
+$db['default']['hostname'] = DB_HOST;
+$db['default']['username'] = DB_USERNAME;
+$db['default']['password'] = DB_PASSWORD;
+$db['default']['database'] = DB_NAME;
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

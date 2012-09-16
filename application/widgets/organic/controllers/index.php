@@ -13,6 +13,15 @@ class Index extends MX_Controller
 
     public function home()
     {
+        $startPage = $this->uri->segment(4) ? $this->uri->segment(4) : 0;
+
+        $this->load->model('OrganicListing');
+        $this->data['listingData'] = $this->OrganicListing->getAllByPage($startPage);
+        $totalData                 = $this->OrganicListing->getAll();
+
+        $this->load->helper('pagination');
+
+        $this->data['pagination'] = getPagination('organic/index/home', $totalData, 4, 52);
         $this->layout->view('home', $this->data);
     }
 
@@ -20,13 +29,13 @@ class Index extends MX_Controller
     {
 
         if( $this->input->post() ){
-            $email = $this->input->post('email', true);
-            $password = $this->input->post('password', true);
-            $isLogin =  $this->_checkLogin($email, md5($password));
+            $email      = $this->input->post('email', true);
+            $password   = $this->input->post('password', true);
+            $isLogin    =  $this->_checkLogin($email, md5($password));
 
             if( $isLogin ){
                 $this->message->set('Successfully Loggedin', 'success', true);
-               redirect('organic/vendors/', 'refresh');
+                redirect('organic/vendors/', 'refresh');
             }else{
                 $this->message->set('Sorry! Invalid Login Information. Please try again', 'failure');
                 redirect('organic/index/login');
@@ -64,17 +73,16 @@ class Index extends MX_Controller
         $this->layout->view('confirmation', $this->data);
     }
 
-
-
-
     /**
      * check for user login
      *
      * @access  private
      * @param   string $email
      * @param   string $password
+     * @return  boolean
      */
-    private function _checkLogin($email, $password){
+    private function _checkLogin($email, $password)
+    {
         $this->load->model('vendors');
         $result = $this->vendors->getUserLogin( $email, $password );
 
