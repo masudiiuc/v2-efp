@@ -4,6 +4,7 @@
 
         <link href="<?php echo base_url() ?>public/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url() ?>public/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url() ?>public/select2/select2.css" media="screen" rel="stylesheet" type="text/css" />
     </head>
 
 <body>
@@ -15,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#">Project name</a>
+                <a class="brand" href="#">Eco-Friendly Party&trade;</a>
                 <div class="nav-collapse collapse">
                     <p class="navbar-text pull-right">
                         <?php if( isset( $email )){ ?>
@@ -63,9 +64,11 @@
     <script type="text/javascript" src="<?php echo base_url() ?>public/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>public/js/jquery-latest.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>public/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>public/select2/select2.js"></script>
     <script type="text/javascript" >
         $(document).ready(function () {
             $("#LoginForm").validate();
+            $(".select2box").select2();
         });
     </script>
 </body>

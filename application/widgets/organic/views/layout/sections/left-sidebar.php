@@ -3,7 +3,7 @@
         <form>
             <legend>Search for Eco-Vendors</legend>
             <label>Find</label>
-            <select id="listing-type" name="listing_type">
+            <select id="listing-type" name="listing_type" class=" span10">
                 <option>Select one</option>
             </select>
 
@@ -12,8 +12,10 @@
 
 
             <label>Within</label>
-            <select id="radius" name="radius">
+            <select id="radius" name="radius" class=" span8">
                 <option value="5">5 miles</option>
+                <option value="10">10 miles</option>
+                <option value="15">15 miles</option>
             </select>
 
             <button type="submit" class="btn-small">Search Now!</button>

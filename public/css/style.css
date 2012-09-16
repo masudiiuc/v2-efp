@@ -71,6 +71,9 @@ legend{
     box-shadow: 1px 1px 2px orange;
 }
 
+#organic-filter div.select2-container{
+    margin-top: 10px;
+}
 
 .footer{
     background-image: url(../images/footer.jpg);

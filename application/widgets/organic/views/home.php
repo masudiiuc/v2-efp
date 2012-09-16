@@ -1,13 +1,10 @@
 <div class="row-fluid">
-    <form class="form-inline">
+    <form class="form-inline" id="organic-filter">
+        <p class="fl"><img src="<?php echo base_url() ?>public/images/organic-food-header.gif"/></p>
+        <select name="city" id="city" class="fr input-medium select2box" placeholder="select state">
 
-        <select name="state" id="state" class="fr input-medium">
-            <option value="">Select city </option>
         </select>
-        <label class="fr">&nbsp;</label>
-        <select name="city" id="city" class="fr input-medium">
-            <option value="">Select state </option>
-        </select>
+        <label class="fr" style="margin-top: 15px;">Choose a State&nbsp;</label>
     </form>
 </div>
 
